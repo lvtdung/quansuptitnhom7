@@ -490,6 +490,71 @@ body {
     align-items: center;
   }
 }
+/* Ảnh chèn trong đoạn văn */
+.main-article .para {
+  line-height: 1.8;
+  text-align: justify;
+  margin: 1.2rem 0;
+}
+
+.inline-img {
+  width: 220px;            /* tùy chỉnh */
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;      /* bỏ nếu bạn không muốn bo góc */
+  margin: .25rem 1rem .5rem 0;
+}
+
+.inline-img.left { 
+  float: left; 
+  margin: .25rem 1rem .5rem 0;
+}
+
+.inline-img.right { 
+  float: right; 
+  margin: .25rem 0 .5rem 1rem;
+}
+
+/* Dọn float để layout không đổ vỡ giữa các đoạn */
+.main-article .para::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Mobile: ảnh lên trên, full width */
+@media (max-width: 640px) {
+  .inline-img {
+    float: none !important;
+    display: block;
+    width: 100%;
+    margin: 0 0 .75rem 0;
+  }
+}
+/* Khung chứa ảnh kiểu báo mạng */
+.article-image {
+  text-align: center;
+  margin: 2rem 0; /* khoảng cách trên dưới */
+}
+
+.article-image img {
+  width: 90%;             /* chiếm 90% vùng nội dung */
+  max-width: 900px;       /* không vượt quá 900px */
+  height: auto;
+  border-radius: 10px;    /* bo nhẹ góc cho đẹp */
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+/* Chú thích dưới ảnh */
+.article-image figcaption {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
 
 
 
